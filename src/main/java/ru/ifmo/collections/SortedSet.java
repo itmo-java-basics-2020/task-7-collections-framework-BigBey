@@ -57,8 +57,7 @@ public class SortedSet<T> extends AbstractSet<T> {
     @Override
     public boolean addAll(Collection<? extends T> c) {
         boolean result = false;
-        for (T t :
-                c) {
+        for (T t : c) {
             if (add(t)) {
                 result = true;
             }
@@ -74,8 +73,7 @@ public class SortedSet<T> extends AbstractSet<T> {
     @Override
     public boolean removeAll(Collection<?> c) {
         boolean result = false;
-        for (Object o :
-                c) {
+        for (Object o : c) {
             if (remove(o)) {
                 result = true;
             }

@@ -9,14 +9,13 @@ import java.util.LinkedHashSet;
  */
 public class FirstUnique {
 
-    private HashSet<Integer> set;
-    private LinkedHashSet<Integer> firstUniqueElement;
+    private final HashSet<Integer> set;
+    private final LinkedHashSet<Integer> firstUniqueElement;
 
     public FirstUnique(int[] numbers) {
         set = new HashSet<>();
         firstUniqueElement = new LinkedHashSet<>();
-        for (int number :
-                numbers) {
+        for (int number : numbers) {
             this.add(number);
         }
     }

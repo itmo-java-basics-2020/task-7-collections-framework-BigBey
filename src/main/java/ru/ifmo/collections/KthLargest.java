@@ -18,8 +18,7 @@ public class KthLargest {
     public KthLargest(int k, int[] numbers) {
         this.k = k;
         sortedSet = new TreeSet<>();
-        for (int number :
-                numbers) {
+        for (int number : numbers) {
             sortedSet.add(new Wrapper(number));
         }
     }
