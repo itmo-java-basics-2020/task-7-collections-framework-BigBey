@@ -1,6 +1,12 @@
 package ru.ifmo.collections;
 
-import java.util.*;
+
+import java.util.AbstractSet;
+import java.util.Collection;
+import java.util.Comparator;
+import java.util.TreeMap;
+import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * Represents sorted set of unique values.

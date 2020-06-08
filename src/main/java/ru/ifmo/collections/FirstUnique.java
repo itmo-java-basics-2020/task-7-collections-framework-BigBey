@@ -2,6 +2,7 @@ package ru.ifmo.collections;
 
 import java.util.HashSet;
 import java.util.LinkedHashSet;
+import java.util.Set;
 
 /**
  * Design a class which contains integers and returns first unique integer (in order of addition).
@@ -9,7 +10,7 @@ import java.util.LinkedHashSet;
  */
 public class FirstUnique {
 
-    private final HashSet<Integer> set;
+    private final Set<Integer> set;
     private final LinkedHashSet<Integer> firstUniqueElement;
 
     public FirstUnique(int[] numbers) {

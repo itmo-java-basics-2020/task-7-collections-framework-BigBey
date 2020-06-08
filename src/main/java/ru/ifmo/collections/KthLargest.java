@@ -1,7 +1,6 @@
 package ru.ifmo.collections;
 
-import java.util.Comparator;
-import java.util.TreeSet;
+import java.util.PriorityQueue;
 
 /**
  * Design a class to find the kth largest element in a stream. k is from 1 to numbers.length.
@@ -12,23 +11,24 @@ import java.util.TreeSet;
  */
 public class KthLargest {
 
-    private final TreeSet<Wrapper> sortedSet;
+    private final PriorityQueue<Integer> priorityQueue;
     private final int k;
 
     public KthLargest(int k, int[] numbers) {
         this.k = k;
-        sortedSet = new TreeSet<>();
+        priorityQueue = new PriorityQueue<>();
         for (int number : numbers) {
-            sortedSet.add(new Wrapper(number));
+            add(number);
         }
     }
 
     public int add(int val) {
-        sortedSet.add(new Wrapper(val));
-        return sortedSet.stream()
-                .skip(sortedSet.size() - k)
-                .findFirst()
-                .map(Wrapper::getValue)
-                .orElse(-1);
+        if (priorityQueue.size() < k) {
+            priorityQueue.add(val);
+        } else if (priorityQueue.peek() < val) {
+            priorityQueue.poll();
+            priorityQueue.add(val);
+        }
+        return priorityQueue.peek();
     }
 }
